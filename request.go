@@ -2,6 +2,8 @@ package actions_on_google_golang
 
 import "time"
 
+const iso8601Format string = "2006-01-02T15:04:05-0700"
+
 type ApiAiRequest struct {
 	ID        string    `json:"id"`
 	Timestamp time.Time `json:"timestamp"`
