@@ -1,4 +1,4 @@
-package actions_on_google_golang
+package model
 
 import "time"
 

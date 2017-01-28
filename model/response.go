@@ -1,4 +1,4 @@
-package actions_on_google_golang
+package model
 
 type ServiceResponse struct {
 	Speech string `json:"speech"`
