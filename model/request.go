@@ -71,7 +71,13 @@ type ApiAiRequest struct {
 				} `json:"raw_inputs"`
 			} `json:"inputs"`
 			User struct {
-				UserID string `json:"user_id"`
+				UserID  string `json:"user_id"`
+				Profile struct {
+					DisplayName string `json:display_name`
+					GivenName   string `json:given_name`
+					FamilyName  string `json:family_name`
+				} `json:profile`
+				AccessToken string `json:access_token`
 			} `json:"user"`
 			Conversation struct {
 				ConversationToken string `json:"conversation_token"`
