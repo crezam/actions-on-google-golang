@@ -29,11 +29,11 @@ type ApiAiRequest struct {
 			Parameters map[string]string
 		} `json:"parameters"`
 		Contexts []struct {
-			Name       string `json:name`
+			Name       string `json:"name"`
 			Parameters struct {
 				Parameters map[string]string
-			} `json:parameters`
-			Lifespan int `json:lifespan`
+			} `json:"parameters"`
+			Lifespan int `json:"lifespan"`
 		} `json:"contexts"`
 		Metadata struct {
 			IntentID                  string `json:"intentId"`
@@ -73,21 +73,21 @@ type ApiAiRequest struct {
 			User struct {
 				UserID  string `json:"user_id"`
 				Profile struct {
-					DisplayName string `json:display_name`
-					GivenName   string `json:given_name`
-					FamilyName  string `json:family_name`
-				} `json:profile`
-				AccessToken string `json:access_token`
+					DisplayName string `json:"display_name"`
+					GivenName   string `json:"given_name"`
+					FamilyName  string `json:"family_name"`
+				} `json:"profile"`
+				AccessToken string `json:"access_token"`
 			} `json:"user"`
 			Device struct {
 				Location struct {
 					Coordinates struct {
-						Latitude  string `json:"latitude`
-						Longitude string `json:"longitude`
+						Latitude  string `json:"latitude"`
+						Longitude string `json:"longitude"`
 					} `json:"coordinates`
-					FormattedAddress string `json:"formatted_address`
+					FormattedAddress string `json:"formatted_address"`
 					ZipCode          int    `json:"zip_code"`
-					City             string `json:city`
+					City             string `json:"city"`
 				} `json:"location"`
 			} `json:"device"`
 			Conversation struct {
