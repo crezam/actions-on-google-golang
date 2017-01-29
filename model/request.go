@@ -28,7 +28,13 @@ type ApiAiRequest struct {
 		Parameters       struct {
 			Parameters map[string]string
 		} `json:"parameters"`
-		Contexts []interface{} `json:"contexts"`
+		Contexts []struct {
+			Name       string `json:name`
+			Parameters struct {
+				Parameters map[string]string
+			} `json:parameters`
+			Lifespan int `json:lifespan`
+		} `json:"contexts"`
 		Metadata struct {
 			IntentID                  string `json:"intentId"`
 			WebhookUsed               string `json:"webhookUsed"`
