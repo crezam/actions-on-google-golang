@@ -79,6 +79,17 @@ type ApiAiRequest struct {
 				} `json:profile`
 				AccessToken string `json:access_token`
 			} `json:"user"`
+			Device struct {
+				Location struct {
+					Coordinates struct {
+						Latitude  string `json:"latitude`
+						Longitude string `json:"longitude`
+					} `json:"coordinates`
+					FormattedAddress string `json:"formatted_address`
+					ZipCode          int    `json:"zip_code"`
+					City             string `json:city`
+				} `json:"location"`
+			} `json:"device"`
 			Conversation struct {
 				ConversationToken string `json:"conversation_token"`
 				ConversationID    string `json:"conversation_id"`
