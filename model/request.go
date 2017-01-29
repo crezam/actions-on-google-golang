@@ -17,8 +17,8 @@ func (isoTime *Iso8601Time) MarshalJSON() ([]byte, error) {
 }
 
 type ApiAiRequest struct {
-	ID        string    `json:"id"`
-	Timestamp time.Time `json:"timestamp"`
+	ID        string      `json:"id"`
+	Timestamp Iso8601Time `json:"timestamp"`
 	Result    struct {
 		Source           string `json:"source"`
 		ResolvedQuery    string `json:"resolvedQuery"`
