@@ -13,11 +13,11 @@ func (isoTime *Iso8601Time) UnmarshalJSON(b []byte) (err error) {
 }
 
 func (isoTime *Iso8601Time) MarshalJSON() ([]byte, error) {
-	return
+	return nil, nil
 }
 
 type ApiAiRequest struct {
-	ID        string      `json:"id"`
+	Id        string      `json:"id"`
 	Timestamp Iso8601Time `json:"timestamp"`
 	Result    struct {
 		Source           string `json:"source"`
@@ -26,6 +26,7 @@ type ApiAiRequest struct {
 		Action           string `json:"action"`
 		ActionIncomplete bool   `json:"actionIncomplete"`
 		Parameters       struct {
+			Parameters map[string]string
 		} `json:"parameters"`
 		Contexts []interface{} `json:"contexts"`
 		Metadata struct {
