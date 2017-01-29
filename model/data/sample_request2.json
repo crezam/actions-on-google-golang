@@ -1,0 +1,65 @@
+{
+  "id": "f4b72ee9-cabb-4acd-af9b-2d2cb6ff53d2",
+  "timestamp": "2016-12-24T07:23:46.64Z",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "i wonder if you are ready for me?",
+    "speech": "",
+    "action": "get_status",
+    "actionIncomplete": false,
+    "parameters": {},
+    "contexts": [],
+    "metadata": {
+      "intentId": "dd7f8d83-6f10-474f-b16c-d3dd3d071730",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "intentName": "get_status"
+    },
+    "fulfillment": {
+      "speech": "",
+      "messages": [
+        {
+          "type": 0,
+          "speech": ""
+        }
+      ]
+    },
+    "score": 0.31
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "1482564192341",
+  "originalRequest": {
+    "source": "google",
+    "data": {
+      "inputs": [
+        {
+          "arguments": [
+            {
+              "raw_text": "i wonder if you are ready for me?",
+              "text_value": "i wonder if you are ready for me?",
+              "name": "text"
+            }
+          ],
+          "intent": "assistant.intent.action.TEXT",
+          "raw_inputs": [
+            {
+              "query": "i wonder if you are ready for me?",
+              "input_type": 2
+            }
+          ]
+        }
+      ],
+      "user": {
+        "user_id": "qGWZsN9WDIL6x8VffNu3YNacqN4FWnyT+8uEA+GcWXc="
+      },
+      "conversation": {
+        "conversation_token": "[]",
+        "conversation_id": "1482564192341",
+        "type": 2
+      }
+    }
+  }
+}
