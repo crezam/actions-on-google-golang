@@ -8,11 +8,11 @@ type Iso8601Time struct {
 
 const iso8601Layout = "2006-01-02T15:04:05-0700"
 
-func (isoTime *Iso8601Time) Unmarshall(b []byte) (err error) {
+func (isoTime *Iso8601Time) UnmarshalJSON(b []byte) (err error) {
 	return
 }
 
-func (isoTime *Iso8601Time) Marshall() ([]byte, error) {
+func (isoTime *Iso8601Time) MarshalJSON() ([]byte, error) {
 	return
 }
 
