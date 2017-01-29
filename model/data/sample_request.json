@@ -1,0 +1,61 @@
+{
+  "id": "209eefa7-adb5-4d03-a8b9-9f7ae68a0c11",
+  "timestamp": "2016-10-10T07:41:40.098Z",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "Hi, my name is Sam!",
+    "action": "greetings",
+    "actionIncomplete": false,
+    "parameters": {
+      "user_name": "Sam"
+    },
+    "contexts": [
+      {
+        "name": "greetings",
+        "parameters": {
+          "user_name": "Sam",
+          "user_name.original": "Sam!"
+        },
+        "lifespan": 5
+      }
+    ],
+    "metadata": {
+      "intentId": "373a354b-c15a-4a60-ac9d-a9f2aee76cb4",
+      "webhookUsed": "true",
+      "intentName": "greetings"
+    },
+    "fulfillment": {
+      "speech": "Nice to meet you, Sam!"
+    },
+    "score": 1
+  },
+  "originalRequest": {
+    "data": {
+      "user": {
+        "user_id": "...",
+        "profile": {
+          "display_name": "Sam",
+          "given_name": "Sam",
+          "family_name": "Johnson"
+        },
+        "access_token": "..."
+      },
+      "device": {
+        "location": {
+          "coordinates": {
+            "latitude": 123.456,
+            "longitude": -123.456
+          },
+          "formatted_address": "1234 Random Road, Anytown, CA 12345, United States",
+          "zip_code": "12345",
+          "city": "Anytown"
+        }
+      }
+    }
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "37151f7c-a409-48b8-9890-cd980cd2548e"
+}
