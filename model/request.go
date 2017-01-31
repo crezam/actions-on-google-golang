@@ -2,23 +2,9 @@ package model
 
 import "time"
 
-type Iso8601Time struct {
-	time.Time
-}
-
-const iso8601Layout = "2006-01-02T15:04:05-0700"
-
-func (isoTime *Iso8601Time) UnmarshalJSON(b []byte) (err error) {
-	return
-}
-
-func (isoTime *Iso8601Time) MarshalJSON() ([]byte, error) {
-	return nil, nil
-}
-
 type ApiAiRequest struct {
-	Id        string      `json:"id"`
-	Timestamp Iso8601Time `json:"timestamp"`
+	Id        string    `json:"id"`
+	Timestamp time.Time `json:"timestamp"`
 	Result    struct {
 		Source           string `json:"source"`
 		ResolvedQuery    string `json:"resolvedQuery"`
@@ -82,11 +68,11 @@ type ApiAiRequest struct {
 			Device struct {
 				Location struct {
 					Coordinates struct {
-						Latitude  string `json:"latitude"`
-						Longitude string `json:"longitude"`
-					} `json:"coordinates`
+						Latitude  float64 `json:"latitude"`
+						Longitude float64 `json:"longitude"`
+					} `json:"coordinates"`
 					FormattedAddress string `json:"formatted_address"`
-					ZipCode          int    `json:"zip_code"`
+					ZipCode          string    `json:"zip_code"`
 					City             string `json:"city"`
 				} `json:"location"`
 			} `json:"device"`
