@@ -2,6 +2,7 @@ package model_test
 
 import (
 	"encoding/json"
+	"github.com/crezam/actions-on-google-golang/internal/test"
 	"github.com/crezam/actions-on-google-golang/model"
 	"os"
 	"testing"
@@ -14,12 +15,11 @@ func TestRequestParsing(t *testing.T) {
 	file, _ := os.Open("./data/sample_request1.json")
 	dec := json.NewDecoder(file)
 
-	if err := dec.Decode(&req); err != nil {
-		t.Fatal(err)
-	}
+	err := dec.Decode(&req)
 
-	if resolvedQuery := req.Result.ResolvedQuery; resolvedQuery != "Hi, my name is Sam!" {
-		t.Fatal("Failed parsing resolved query")
-	}
+	// test if any issues decoding file
+	test.Ok(t, err)
 
+	// assert values in fields
+	test.Equals(t, "Hi, my name is Sam!", req.Result.ResolvedQuery)
 }
