@@ -31,6 +31,9 @@ func TestRequestParsing(t *testing.T) {
 	test.Equals(t, "agent", req.Result.Source)
 	test.Equals(t, "greetings", req.Result.Action)
 	test.Equals(t, false, req.Result.ActionIncomplete)
-	test.Equals(t, "Sam", req.Result.Parameters.Parameters["user_name"])
+	test.Equals(t, "Sam", req.Result.Parameters["user_name"])
+	test.Equals(t, "", req.Result.Parameters["school"])
+
+
 
 }
