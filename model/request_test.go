@@ -36,5 +36,28 @@ func TestRequestParsing(t *testing.T) {
 
 	test.Equals(t, "greetings", req.Result.Contexts[0].Name)
 	test.Equals(t, "Sam", req.Result.Contexts[0].Parameters["user_name"])
+	test.Equals(t, "Sam!", req.Result.Contexts[0].Parameters["user_name.original"])
+
+	test.Equals(t, "373a354b-c15a-4a60-ac9d-a9f2aee76cb4", req.Result.Metadata.IntentID)
+	test.Equals(t, "true", req.Result.Metadata.WebhookUsed)
+	test.Equals(t, "greetings", req.Result.Metadata.IntentName)
+
+	test.Equals(t, "Nice to meet you, Sam!", req.Result.Fulfillment.Speech)
+
+	test.Equals(t, float64(1), req.Result.Score)
+
+	test.Equals(t, "...", req.OriginalRequest.Data.User.UserID)
+	test.Equals(t, "Sam", req.OriginalRequest.Data.User.Profile.DisplayName)
+	test.Equals(t, "Sam", req.OriginalRequest.Data.User.Profile.GivenName)
+	test.Equals(t, "Johnson", req.OriginalRequest.Data.User.Profile.FamilyName)
+
+	test.Equals(t, "...", req.OriginalRequest.Data.User.AccessToken)
+
+	test.Equals(t, 123.456, req.OriginalRequest.Device.Location.Coordinates.latitude)
+
+
+
+
+
 
 }
