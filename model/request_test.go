@@ -28,4 +28,9 @@ func TestRequestParsing(t *testing.T) {
 	test.Equals(t, expectedTimestamp, req.Timestamp)
 
 	test.Equals(t, "Hi, my name is Sam!", req.Result.ResolvedQuery)
+	test.Equals(t, "agent", req.Result.Source)
+	test.Equals(t, "greetings", req.Result.Action)
+	test.Equals(t, false, req.Result.ActionIncomplete)
+	test.Equals(t, "Sam", req.Result.Parameters.Parameters["user_name"])
+
 }
