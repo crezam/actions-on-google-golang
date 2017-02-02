@@ -6,6 +6,7 @@ import (
 	"github.com/crezam/actions-on-google-golang/model"
 	"os"
 	"testing"
+	"time"
 )
 
 func TestRequestParsing(t *testing.T) {
@@ -20,6 +21,11 @@ func TestRequestParsing(t *testing.T) {
 	// test if any issues decoding file
 	test.Ok(t, err)
 
-	// assert values in fields
+	// assert correct parsing
+	test.Equals(t, "209eefa7-adb5-4d03-a8b9-9f7ae68a0c11", req.Id)
+
+	expectedTimestamp, _ := time.Parse(time.RFC3339Nano, "2016-10-10T07:41:40.098Z")
+	test.Equals(t, expectedTimestamp, req.Timestamp)
+
 	test.Equals(t, "Hi, my name is Sam!", req.Result.ResolvedQuery)
 }
