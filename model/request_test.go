@@ -54,10 +54,14 @@ func TestRequestParsing(t *testing.T) {
 	test.Equals(t, "...", req.OriginalRequest.Data.User.AccessToken)
 
 	test.Equals(t, 123.456, req.OriginalRequest.Data.Device.Location.Coordinates.Latitude)
+	test.Equals(t, -123.456, req.OriginalRequest.Data.Device.Location.Coordinates.Longitude)
 
+	test.Equals(t, "1234 Random Road, Anytown, CA 12345, United States", req.OriginalRequest.Data.Device.Location.FormattedAddress)
+	test.Equals(t, "12345", req.OriginalRequest.Data.Device.Location.ZipCode)
+	test.Equals(t, "Anytown", req.OriginalRequest.Data.Device.Location.City)
 
+	test.Equals(t, 200, req.Status.Code)
+	test.Equals(t, "success", req.Status.ErrorType)
 
-
-
-
+	test.Equals(t, "37151f7c-a409-48b8-9890-cd980cd2548e", req.SessionID)
 }
