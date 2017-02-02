@@ -13,11 +13,9 @@ type ApiAiRequest struct {
 		ActionIncomplete bool              `json:"actionIncomplete"`
 		Parameters       map[string]string `json:"parameters"`
 		Contexts         []struct {
-			Name       string `json:"name"`
-			Parameters struct {
-				Parameters map[string]string
-			} `json:"parameters"`
-			Lifespan int `json:"lifespan"`
+			Name       string            `json:"name"`
+			Parameters map[string]string `json:"parameters"`
+			Lifespan   int               `json:"lifespan"`
 		} `json:"contexts"`
 		Metadata struct {
 			IntentID                  string `json:"intentId"`
