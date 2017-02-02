@@ -6,15 +6,13 @@ type ApiAiRequest struct {
 	Id        string    `json:"id"`
 	Timestamp time.Time `json:"timestamp"`
 	Result    struct {
-		Source           string `json:"source"`
-		ResolvedQuery    string `json:"resolvedQuery"`
-		Speech           string `json:"speech"`
-		Action           string `json:"action"`
-		ActionIncomplete bool   `json:"actionIncomplete"`
-		Parameters       struct {
-			Parameters map[string]string
-		} `json:"parameters"`
-		Contexts []struct {
+		Source           string            `json:"source"`
+		ResolvedQuery    string            `json:"resolvedQuery"`
+		Speech           string            `json:"speech"`
+		Action           string            `json:"action"`
+		ActionIncomplete bool              `json:"actionIncomplete"`
+		Parameters       map[string]string `json:"parameters"`
+		Contexts         []struct {
 			Name       string `json:"name"`
 			Parameters struct {
 				Parameters map[string]string
@@ -72,7 +70,7 @@ type ApiAiRequest struct {
 						Longitude float64 `json:"longitude"`
 					} `json:"coordinates"`
 					FormattedAddress string `json:"formatted_address"`
-					ZipCode          string    `json:"zip_code"`
+					ZipCode          string `json:"zip_code"`
 					City             string `json:"city"`
 				} `json:"location"`
 			} `json:"device"`
