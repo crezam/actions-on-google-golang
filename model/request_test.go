@@ -53,7 +53,7 @@ func TestRequestParsing(t *testing.T) {
 
 	test.Equals(t, "...", req.OriginalRequest.Data.User.AccessToken)
 
-	test.Equals(t, 123.456, req.OriginalRequest.Device.Location.Coordinates.latitude)
+	test.Equals(t, 123.456, req.OriginalRequest.Data.Device.Location.Coordinates.Latitude)
 
 
 
