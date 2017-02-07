@@ -78,5 +78,11 @@ func TestRequest2Parsing(t *testing.T) {
 	// test if any issues decoding file
 	test.Ok(t, err)
 
+	// assert correct parsing
+	test.Equals(t, "f4b72ee9-cabb-4acd-af9b-2d2cb6ff53d2", req.Id)
+
+	expectedTimestamp, _ := time.Parse(time.RFC3339Nano, "2016-12-24T07:23:46.64Z")
+	test.Equals(t, expectedTimestamp, req.Timestamp)
+
 }
 
