@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func TestRequestParsing(t *testing.T) {
+func TestRequest1Parsing(t *testing.T) {
 
 	var req model.ApiAiRequest
 
@@ -65,3 +65,18 @@ func TestRequestParsing(t *testing.T) {
 
 	test.Equals(t, "37151f7c-a409-48b8-9890-cd980cd2548e", req.SessionID)
 }
+
+func TestRequest2Parsing(t *testing.T) {
+
+	var req model.ApiAiRequest
+
+	file, _ := os.Open("./data/sample_request2.json")
+	dec := json.NewDecoder(file)
+
+	err := dec.Decode(&req)
+
+	// test if any issues decoding file
+	test.Ok(t, err)
+
+}
+
