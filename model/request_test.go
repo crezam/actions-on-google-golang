@@ -84,5 +84,11 @@ func TestRequest2Parsing(t *testing.T) {
 	expectedTimestamp, _ := time.Parse(time.RFC3339Nano, "2016-12-24T07:23:46.64Z")
 	test.Equals(t, expectedTimestamp, req.Timestamp)
 
+	test.Equals(t, "i wonder if you are ready for me?", req.Result.ResolvedQuery)
+	test.Equals(t, "agent", req.Result.Source)
+	test.Equals(t, "get_status", req.Result.Action)
+	test.Equals(t, false, req.Result.ActionIncomplete)
+	test.Equals(t, map[string]string{}, req.Result.Parameters)
+
 }
 
