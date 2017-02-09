@@ -90,5 +90,13 @@ func TestRequest2Parsing(t *testing.T) {
 	test.Equals(t, false, req.Result.ActionIncomplete)
 	test.Equals(t, map[string]string{}, req.Result.Parameters)
 
+	//TODO test Context
+
+	test.Equals(t, "dd7f8d83-6f10-474f-b16c-d3dd3d071730", req.Result.Metadata.IntentID)
+	test.Equals(t, "true", req.Result.Metadata.WebhookUsed)
+	test.Equals(t, "false", req.Result.Metadata.WebhookForSlotFillingUsed)
+	test.Equals(t, "get_status", req.Result.Metadata.IntentName)
+
+
 }
 
