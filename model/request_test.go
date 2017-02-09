@@ -97,6 +97,10 @@ func TestRequest2Parsing(t *testing.T) {
 	test.Equals(t, "false", req.Result.Metadata.WebhookForSlotFillingUsed)
 	test.Equals(t, "get_status", req.Result.Metadata.IntentName)
 
+	test.Equals(t, "", req.Result.Fulfillment.Speech)
+	test.Equals(t, 0, req.Result.Fulfillment.Messages[0].Type)
+	test.Equals(t, "", req.Result.Fulfillment.Messages[0].Speech)
+
 
 }
 
