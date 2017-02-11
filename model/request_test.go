@@ -106,6 +106,13 @@ func TestRequest2Parsing(t *testing.T) {
 	test.Equals(t, 200, req.Status.Code)
 	test.Equals(t, "success", req.Status.ErrorType)
 
+	test.Equals(t, "1482564192341", req.SessionID)
+
+	test.Equals(t, "google", req.OriginalRequest.Source)
+	test.Equals(t, "i wonder if you are ready for me?", req.OriginalRequest.Data.Inputs[0].Arguments[0].RawText)
+	test.Equals(t, "i wonder if you are ready for me?", req.OriginalRequest.Data.Inputs[0].Arguments[0].TextValue)
+	test.Equals(t, "text", req.OriginalRequest.Data.Inputs[0].Arguments[0].Name)
+
 
 
 
