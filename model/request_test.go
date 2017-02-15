@@ -117,6 +117,10 @@ func TestRequest2Parsing(t *testing.T) {
 	test.Equals(t, 2, req.OriginalRequest.Data.Inputs[0].RawInputs[0].InputType)
 
 	test.Equals(t, "qGWZsN9WDIL6x8VffNu3YNacqN4FWnyT+8uEA+GcWXc=", req.OriginalRequest.Data.User.UserID)
+
+	//TODO test Conversation Token
+	//test.Equals(t, []interface{}, req.OriginalRequest.Data.Conversation.ConversationToken)
+
 	test.Equals(t, "1482564192341", req.OriginalRequest.Data.Conversation.ConversationID)
 	test.Equals(t, 2, req.OriginalRequest.Data.Conversation.Type)
 
