@@ -112,9 +112,13 @@ func TestRequest2Parsing(t *testing.T) {
 	test.Equals(t, "i wonder if you are ready for me?", req.OriginalRequest.Data.Inputs[0].Arguments[0].RawText)
 	test.Equals(t, "i wonder if you are ready for me?", req.OriginalRequest.Data.Inputs[0].Arguments[0].TextValue)
 	test.Equals(t, "text", req.OriginalRequest.Data.Inputs[0].Arguments[0].Name)
+	test.Equals(t, "assistant.intent.action.TEXT", req.OriginalRequest.Data.Inputs[0].Intent)
+	test.Equals(t, "i wonder if you are ready for me?", req.OriginalRequest.Data.Inputs[0].RawInputs[0].Query)
+	test.Equals(t, 2, req.OriginalRequest.Data.Inputs[0].RawInputs[0].InputType)
 
-
-
+	test.Equals(t, "qGWZsN9WDIL6x8VffNu3YNacqN4FWnyT+8uEA+GcWXc=", req.OriginalRequest.Data.User.UserID)
+	test.Equals(t, "1482564192341", req.OriginalRequest.Data.Conversation.ConversationID)
+	test.Equals(t, 2, req.OriginalRequest.Data.Conversation.Type)
 
 }
 
