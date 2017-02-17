@@ -20,6 +20,5 @@ func HandleWebhook(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(webhookRequest.Result.ResolvedQuery)
 	w.Write([]byte("OK"))
 }
